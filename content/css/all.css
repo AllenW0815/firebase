@@ -1,1 +1,4 @@
-/* No CSS */
+th,
+td {
+  white-space: nowrap;
+}
