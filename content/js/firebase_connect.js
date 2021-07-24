@@ -18,6 +18,7 @@ let db = firebase.firestore();
 // default
 let user = 'Allen'
 
+
 // 創建寫入時的一個物件
 let datas = getElements('[data-type]')
 function creatOrder() {;
@@ -31,7 +32,26 @@ function creatOrder() {;
     return order
 }
 
+// 關於使用者
+const dedectUser = () => {
+    userDom = getElement('#user')
+    userDom.innerText = user
+}
 
+const changeUser = () => {
+    const form = getElement('form')
+    userDom = getElement('#user')
+    if(user === 'Allen') {
+        user = 'Taco'
+        userDom.innerText = user
+    }else if(user === 'Taco'){
+        user = 'Allen'
+        userDom.innerText = user
+    }
+    if(!form) {
+        getOrders()
+    }
+}
 
 // 寫入
 const writeOrder = () => {
@@ -50,12 +70,16 @@ const writeOrder = () => {
 
 // 讀取顯示
 const getOrders = () => {
+    // console.log(user);
     let orderRef = db.collection("semicolon").doc("orders").collection(user)
 
     orderRef.get()
     .then((res) => {
         let dataArray = res.docs.sort((a,b) => a.data().unix > b.data().unix ? 1 : -1)
+        // console.log(dataArray[0].data());
+        let profit =  0 
         const showOrders = getElement('#show_orders')
+        const showProfit = getElement('.profit')
         let display = ''
         dataArray.forEach((doc) => {
             let item = doc.data()
@@ -69,10 +93,28 @@ const getOrders = () => {
             <td>${item.other_cost}</td>
             <td>${item.cost-item.cost-item.other_cost}</td>`
             display += `</tr>`
+
+            profit += item.cost-item.cost-item.other_cost
         })
         showOrders.innerHTML = display
+        showProfit.innerText =`$ ${profit}`
+
     })
     .catch((error) => {
         console.log("Error getting document:", error);
     });
 }
+
+
+
+/* common run */
+
+/* DOM */
+const userBtn = getElement('#user_btn')
+
+
+/* user */
+userBtn.addEventListener('click',changeUser)
+
+/* init */
+dedectUser()
