@@ -2,3 +2,12 @@ th,
 td {
   white-space: nowrap;
 }
+
+h5 {
+  margin: 0;
+}
+
+.profit {
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
+}
