@@ -22,6 +22,8 @@ let user = 'Allen'
 let datas = getElements('[data-type]')
 function creatOrder() {;
     let order = {}
+    let unix = moment().unix()
+    order['unix'] = unix
     datas.forEach((data) => {
         let key = data.getAttribute('data-type')
         order[key] = data.value
@@ -29,11 +31,12 @@ function creatOrder() {;
     return order
 }
 
-// 時間
-let now = moment().format('YYYY-MM-DD HH:mm:ss')
+
 
 // 寫入
 const writeOrder = () => {
+    // 時間
+    let now = moment().format('YYYY-MM-DD HH:mm:ss')
     let orderRef = db.collection("semicolon").doc("orders").collection(user).doc(now)
 
     orderRef.set(creatOrder())
@@ -51,12 +54,23 @@ const getOrders = () => {
 
     orderRef.get()
     .then((res) => {
-        console.log(res.docs);
-        res.forEach((doc) => {
-            console.log(doc.data());
+        let dataArray = res.docs.sort((a,b) => a.data().unix > b.data().unix ? 1 : -1)
+        const showOrders = getElement('#show_orders')
+        let display = ''
+        dataArray.forEach((doc) => {
+            let item = doc.data()
+            display += `<tr>`
+            display += `<th>${item.date}</th>`
+            display += `
+            <td>${item.customer}</td>
+            <td>${item.order_content}</td>
+            <td>${item.price}</td>
+            <td>${item.cost}</td>
+            <td>${item.other_cost}</td>
+            <td>${item.cost-item.cost-item.other_cost}</td>`
+            display += `</tr>`
         })
-        let a = Object.entries(res.docs)
-        console.log(a);
+        showOrders.innerHTML = display
     })
     .catch((error) => {
         console.log("Error getting document:", error);
