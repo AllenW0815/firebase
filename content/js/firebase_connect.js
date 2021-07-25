@@ -17,6 +17,9 @@ let db = firebase.firestore();
 
 // default
 let user = 'Allen'
+let balance = 42520
+let balance2 = 37740
+let usedBalance = 0
 
 
 // 創建寫入時的一個物件
@@ -53,6 +56,14 @@ const changeUser = () => {
     }
 }
 
+// 餘額紀錄
+const showBalance = (usedBalance) => {
+    const balanceDOM = getElement('.balance')
+    let currentBalance = user === 'Allen' ? balance-usedBalance : balance2-usedBalance
+    // console.log(typeof currentBalance);
+    balanceDOM.innerText = `$ ${currentBalance}`
+}
+
 // 寫入
 const writeOrder = () => {
     // 時間
@@ -74,15 +85,19 @@ function deleteOrder(e) {;
     const order = e.target.closest('tr')
     const orderId = order.getAttribute('data-id')
     let orderRef = db.collection("semicolon").doc("orders").collection(user).doc(orderId)
+    let answer = confirm('確認要刪除此筆訂單?')
 
-    orderRef.delete()
-    .then(() => console.log("Document successfully deleted!"))
-    .then(() => getOrders())
-    .catch((error) => {
-        console.error("Error removing document: ", error);
-    });
+    if(answer === true) {
+        orderRef.delete()
+        .then(() => console.log("Document successfully deleted!"))
+        .then(() => getOrders())
+        .catch((error) => {
+            console.error("Error removing document: ", error);
+        });
+    }else {
+        console.log('你再好好想想');
+    }
 }
-
 
 // 讀取顯示
 const getOrders = () => {
@@ -93,7 +108,8 @@ const getOrders = () => {
     .then((res) => {
         let dataArray = res.docs.sort((a,b) => a.data().unix > b.data().unix ? -1 : 1)
         // console.log(dataArray[0].data());
-        let profit =  0 
+        let profit =  0
+        let usedBalance = 0
         const showOrders = getElement('#show_orders')
         const showProfit = getElement('.profit')
         let display = ''
@@ -114,10 +130,13 @@ const getOrders = () => {
             display += `</tr>`
 
             profit += item.price - item.cost - item.other_cost
+            usedBalance += +item.cost // 這邊會變成字串 所以要轉型 ?
+            // console.log(usedBalance);
         })
+        // console.log(typeof usedBalance);
         showOrders.innerHTML = display
         showProfit.innerText =`$ ${profit}`
-
+        showBalance(usedBalance)
     })
     .then(() => {
         const delBtn = getElements('.del_btn')
@@ -125,6 +144,8 @@ const getOrders = () => {
         delBtn.forEach((btn) => {
             btn.addEventListener('click', deleteOrder)
         })
+
+
     })
     .catch((error) => {
         console.log("Error getting document:", error);

@@ -2,7 +2,7 @@
 const date = getElement('#date')
 const submitBtn = getElement('#submit')
 
-function makeSure() {
+function makeSureAdd() {
     Swal.fire({
         title: '確認內容無誤?',
         text: "訂單源源不絕發大財",
@@ -28,7 +28,7 @@ function makeSure() {
 date.value= moment().format('YYYY-MM-DD')
 
 /* 寫入 */
-submitBtn.addEventListener('click',makeSure)
+submitBtn.addEventListener('click',makeSureAdd)
 
 
 /* init */
