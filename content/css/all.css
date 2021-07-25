@@ -34,3 +34,9 @@ h5 {
   -webkit-transform: translateY(-1px);
           transform: translateY(-1px);
 }
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
