@@ -1,6 +1,29 @@
 th,
 td {
+  position: relative;
   white-space: nowrap;
+}
+
+th:hover,
+td:hover {
+  color: transparent;
+}
+
+th:hover svg.del_btn,
+td:hover svg.del_btn {
+  display: block;
+  z-index: 2;
+}
+
+th svg.del_btn,
+td svg.del_btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: none;
 }
 
 h5 {
@@ -9,5 +32,5 @@ h5 {
 
 .profit {
   -webkit-transform: translateY(-1px);
-  transform: translateY(-1px);
+          transform: translateY(-1px);
 }

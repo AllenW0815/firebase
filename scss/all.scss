@@ -1,6 +1,22 @@
 th,
 td {
+  position: relative;
   white-space: nowrap;
+  &:hover {
+    color: transparent;
+    svg.del_btn {
+      display: block;
+      z-index: 2;
+    }
+  }
+  svg.del_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    display: none;
+  }
 }
 
 h5 {
