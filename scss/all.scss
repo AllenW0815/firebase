@@ -2,11 +2,13 @@ th,
 td {
   position: relative;
   white-space: nowrap;
-  &:hover {
-    color: transparent;
-    svg.del_btn {
-      display: block;
-      z-index: 2;
+  &:first-child {
+    &:hover {
+      color: transparent;
+      svg.del_btn {
+        display: block;
+        z-index: 2;
+      }
     }
   }
   svg.del_btn {

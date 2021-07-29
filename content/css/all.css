@@ -4,13 +4,13 @@ td {
   white-space: nowrap;
 }
 
-th:hover,
-td:hover {
+th:first-child:hover,
+td:first-child:hover {
   color: transparent;
 }
 
-th:hover svg.del_btn,
-td:hover svg.del_btn {
+th:first-child:hover svg.del_btn,
+td:first-child:hover svg.del_btn {
   display: block;
   z-index: 2;
 }
