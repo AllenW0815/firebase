@@ -89,7 +89,14 @@ function deleteOrder(e) {;
 
     if(answer === true) {
         orderRef.delete()
-        .then(() => console.log("Document successfully deleted!"))
+        .then(() => {
+          console.log("Document successfully deleted!")
+          Swal.fire({
+                icon: 'error',
+                text: '已成功刪除'
+                }
+            )
+        })  
         .then(() => getOrders())
         .catch((error) => {
             console.error("Error removing document: ", error);
@@ -115,6 +122,7 @@ const getOrders = () => {
         let display = ''
         dataArray.forEach((doc) => {
             let item = doc.data()
+            console.log(item.remark);
             display += `<tr data-id="${doc.id}">`
             display += `<th>
             ${item.date}
@@ -126,7 +134,7 @@ const getOrders = () => {
             <td>${item.price}</td>
             <td>${item.cost}</td>
             <td>${item.other_cost}</td>
-            <td>${item.price-item.cost-item.other_cost}</td>`
+            <td  data-toggle="tooltip" data-placement="right" title=${item.remark}>${item.price-item.cost-item.other_cost}</td>`
             display += `</tr>`
 
             profit += item.price - item.cost - item.other_cost
@@ -144,7 +152,9 @@ const getOrders = () => {
         delBtn.forEach((btn) => {
             btn.addEventListener('click', deleteOrder)
         })
-
+        // BS 的工具提示功能
+        $('[data-toggle="tooltip"]').tooltip()
+          
 
     })
     .catch((error) => {
@@ -165,3 +175,7 @@ userBtn.addEventListener('click',changeUser)
 
 /* init */
 dedectUser()
+
+
+
+// 1. 把使用者用 local storage 儲存使用者來,讓使用者 TACO 不用切換

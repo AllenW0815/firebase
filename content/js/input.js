@@ -14,8 +14,10 @@ function makeSureAdd() {
         }).then((result) => {
         if (result.isConfirmed) {
             writeOrder()
-            Swal.fire(
-            'success'
+            Swal.fire({
+                icon: 'success',
+                text: '已成功紀錄'
+                }
             )
         }
     })
