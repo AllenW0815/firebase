@@ -32,3 +32,21 @@ h5 {
 .info {
   display: flex;
 }
+
+// menu page
+
+.tabs {
+  width: 100%;
+  padding: 2em 30px;
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    li {
+      margin: 0 1em;
+      padding: 0.5em;
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+  }
+}

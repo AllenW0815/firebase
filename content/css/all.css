@@ -40,3 +40,27 @@ h5 {
   display: -ms-flexbox;
   display: flex;
 }
+
+.tabs {
+  width: 100%;
+  padding: 2em 30px;
+}
+
+.tabs ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tabs ul li {
+  margin: 0 1em;
+  padding: 0.5em;
+  border: 1px solid #000;
+  cursor: pointer;
+}
