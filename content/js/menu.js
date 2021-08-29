@@ -307,6 +307,7 @@ $(function(){
     }
 
     $('.tabs li').on('click', function(e) {
+        $(this).addClass('active').siblings().removeClass('active');
         const whichCategory = $(this).data('category') // 透過 data 比對顯示內容
         callMenu(whichCategory)
     })
