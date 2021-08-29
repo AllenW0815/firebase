@@ -1,3 +1,5 @@
+@import "media-breakpoint";
+
 th,
 td {
   position: relative;
@@ -42,11 +44,162 @@ h5 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    gap: 8px;
     li {
-      margin: 0 1em;
       padding: 0.5em;
       border: 1px solid #000;
+      border-radius: 8px;
       cursor: pointer;
+      &.active {
+        background-color: #000;
+        color: #fff;
+      }
     }
+  }
+}
+
+// landing page
+
+.landing {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: #fff;
+  .bg01,
+  .bg02 {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+  }
+  .bg01 {
+    background: #003a56;
+  }
+  .bg02 {
+    background: #e6e36d;
+    left: 50%;
+  }
+
+  .brand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    h1 {
+      font-size: clamp(2rem, 10vw, 12rem);
+      font-weight: 900;
+      margin-bottom: 8px;
+      // text-shadow: 4px 4px 16px #333;
+    }
+    h4 {
+      font-size: clamp(1rem, 1.75vw, 5rem);
+      font-weight: 500;
+      color: #003a56;
+      text-align: right;
+    }
+  }
+}
+
+.strip {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+  &.no1 {
+    left: 10%;
+  }
+  &.no2 {
+    right: 10%;
+  }
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #c8d;
+}
+
+.ellipse_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  margin: 0 auto;
+  // background-color: rgb(213, 226, 235);
+  z-index: 9;
+  .ellipse {
+    position: absolute;
+    top: 0;
+    border-radius: 50%;
+    border-style: solid;
+    &.thin {
+      width: 100%;
+      height: 100%;
+      border-width: 1px;
+      border-color: #fff;
+      opacity: 0.5;
+    }
+    &.thick {
+      width: 93%;
+      height: 93%;
+      border-width: 10px;
+      border-color: transparent;
+      transform: rotate(-45deg);
+      top: 12px;
+      left: 12px;
+    }
+    &.c {
+      width: 93%;
+      height: 93%;
+      border-width: 8px;
+      border-color: #003a56 transparent #e6e36d transparent;
+      transform: rotate(-45deg);
+      top: 12px;
+      left: 12px;
+      animation: ellipseRotate 8s ease-in-out infinite;
+    }
+    @keyframes ellipseRotate {
+      0% {
+        transform: rotate(-45deg);
+      }
+      100% {
+        transform: rotate(-405deg);
+      }
+    }
+  }
+}
+
+.links {
+  position: absolute;
+  left: 10%;
+  bottom: 10%;
+  z-index: 10;
+  ul {
+    li {
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+      a {
+        font-size: 1.25rem;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.socials {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  a {
+    color: #fff;
   }
 }
