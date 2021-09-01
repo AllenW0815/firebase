@@ -1,6 +1,5 @@
 [
   {
-    "id": "1",
     "name": "銅板紙100磅",
     "category": "DM",
     "quantity": "A",
@@ -22,7 +21,6 @@
     ]
   },
   {
-    "id": "2",
     "name": "銅板紙150磅",
     "category": "DM",
     "quantity": "A",
@@ -44,7 +42,6 @@
     ]
   },
   {
-    "id": "3",
     "name": "銅西卡200磅",
     "category": "DM",
     "quantity": "B",
@@ -66,7 +63,6 @@
     ]
   },
   {
-    "id": "4",
     "name": "銅西卡250磅",
     "category": "DM",
     "quantity": "B",
@@ -88,7 +84,6 @@
     ]
   },
   {
-    "id": "5",
     "name": "珠光貼紙",
     "category": "STK",
     "quantity": "C",
@@ -102,7 +97,6 @@
     ]
   },
   {
-    "id": "6",
     "name": "象牙卡",
     "category": "CARD",
     "quantity": "D",
