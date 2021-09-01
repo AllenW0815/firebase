@@ -115,6 +115,15 @@ h5 {
   &.no2 {
     right: 10%;
   }
+  &.no3 {
+    right: 9.5%;
+  }
+  &.no4 {
+    right: 9%;
+  }
+  &.no5 {
+    right: 8.5%;
+  }
 }
 
 .dot {
@@ -133,6 +142,7 @@ h5 {
   height: 600px;
   border-radius: 50%;
   margin: 0 auto;
+  // opacity: 0;
   // background-color: rgb(213, 226, 235);
   z-index: 9;
   .ellipse {
