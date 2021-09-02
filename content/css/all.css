@@ -4,6 +4,7 @@
     寫在該class內層代表該class在此寬度下的樣式
 }
 */
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 th,
 td {
   position: relative;
@@ -119,10 +120,11 @@ h5 {
 }
 
 .landing .brand h4 {
-  font-size: clamp(1rem, 1.75vw, 5rem);
+  font-size: clamp(1rem, 2.25vw, 5rem);
   font-weight: 500;
   color: #003a56;
   text-align: right;
+  font-family: "Great Vibes", cursive;
 }
 
 .strip {
@@ -142,15 +144,35 @@ h5 {
 }
 
 .strip.no3 {
-  right: 9%;
+  right: 9.6%;
 }
 
 .strip.no4 {
-  right: 8%;
+  right: 9.2%;
 }
 
 .strip.no5 {
-  right: 7%;
+  right: 8.8%;
+}
+
+.strip.no6 {
+  right: 8.4%;
+}
+
+.strip.no7 {
+  right: 8%;
+}
+
+.strip.no8 {
+  right: 7.6%;
+}
+
+.strip.no9 {
+  right: 7.2%;
+}
+
+.strip.no10 {
+  right: 6.8%;
 }
 
 .dot {

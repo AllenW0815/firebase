@@ -1,15 +1,16 @@
-const tl = gsap.timeline({defalt:{ease: 'power1.out'}})
+const timeline = gsap.timeline({defalt:{ease: 'power1.out'}})
 
 
-tl.from(".bg01",{width: 0, duration:1.2, delay:0.1, ease: 'Expo.easeInOut'})
-tl.from(".bg02",{width: 0, duration:1.2, delay:0.1, ease: 'Expo.easeInOut'})
+timeline
+    .from(".bg01",{width: 0, duration:1.2, delay:0.1, ease: 'Expo.easeInOut'})
+    .from(".bg02",{width: 0, duration:1.2, delay:0.1, ease: 'Expo.easeInOut'})
 
-tl.from(".socials",{yPercent: -300, duration: 0.8});
-tl.from(".strip",{yPercent: -300, duration: 1.2, stagger: 0.1});
-tl.from(".links li",{xPercent: -250, duration: 0.5, stagger: 0.25});
+    .from(".socials",{yPercent: -300, duration: 0.8})
+    .from(".strip",{yPercent: -300, duration: 1.2, stagger: 0.1}, 2.2)
+    .from(".links li",{xPercent: -250, duration: 0.5, stagger: 0.25})
 
-tl.from(".ellipse_container",{opacity: 0, duration: 1.2})
-tl.from(".mun_title",{opacity: 0, translateY: "40px", duration: 0.4})
+    .from(".ellipse_container",{opacity: 0, duration: 1.2})
+    .from(".mun_title",{opacity: 0, translateY: "40px", duration: 0.4})
 
 
 
