@@ -4,7 +4,7 @@
     寫在該class內層代表該class在此寬度下的樣式
 }
 */
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 th,
 td {
   position: relative;
@@ -114,17 +114,17 @@ h5 {
 }
 
 .landing .brand h1 {
-  font-size: clamp(2rem, 10vw, 12rem);
+  font-size: clamp(2rem, 12.5vw, 15rem);
   font-weight: 900;
   margin-bottom: 8px;
+  font-family: "Staatliches", cursive;
 }
 
 .landing .brand h4 {
   font-size: clamp(1rem, 2.25vw, 5rem);
   font-weight: 500;
-  color: #003a56;
   text-align: right;
-  font-family: "Great Vibes", cursive;
+  font-family: "Staatliches", cursive;
 }
 
 .strip {
