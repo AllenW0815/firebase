@@ -1,3 +1,4 @@
+// 用 span 包住每個字母
 const insertSpan = (selector) => {
     let dom = document.querySelector(selector)
     let text = dom.innerText
@@ -10,6 +11,9 @@ const insertSpan = (selector) => {
 const mainTitle = document.querySelector('.main_title')
 mainTitle.innerHTML = insertSpan(".main_title")
 
+// 選取出陣列做操作 像是 ScrollTrigger
+// let targets = gsap.utils.toArray(".letter");
+// console.log(targets);
 
 
 window.addEventListener('load', () => {
