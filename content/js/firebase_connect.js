@@ -17,9 +17,15 @@ let db = firebase.firestore();
 
 // default
 let user = 'Allen'
-let balance = 42520
-let balance2 = 37740
+let balance = 42520 // Allen
+let balance2 = 37740 // Taco
 let usedBalance = 0
+
+// 儲值變動
+// 1101108
+balance -= 10000
+balance2 += 10000
+
 
 
 // 創建寫入時的一個物件
