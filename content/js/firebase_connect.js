@@ -25,6 +25,9 @@ let usedBalance = 0
 // 1101108
 balance -= 10000
 balance2 += 10000
+// 1101130
+balance += 50000
+balance2 += 50000
 
 
 
