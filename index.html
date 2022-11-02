@@ -1,113 +1,170 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>分號印刷設計</title>
-<link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous"
-/>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>分號印刷設計</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-        <div class="container">
-          <a class="navbar-brand" href="landing.html">分號印刷設計</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                  <li class="nav-item active">
+      <div class="container">
+        <a class="navbar-brand" href="landing.html">分號印刷設計</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <!-- <li class="nav-item active">
                     <a class="nav-link" href="index.html"
                       >訂單輸入</span></a
                     >
                   </li>
                   <li class="nav-item ">
                     <a class="nav-link" href="demonstrate.html">訂單總表</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="menu.html">價目表</a>
-                  </li>
-                </ul>
+                  </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">價目表</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <form>
+        <div class="form-row">
+          <button type="button" class="btn btn-info ml-1 mb-3" id="user_btn">
+            <span style="font-size: 12px">當前使用者</span>
+            <span id="user"></span>
+          </button>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-2">
+            <label for="date">訂單日期</label>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              id="date"
+              autocomplete="off"
+              data-type="date"
+            />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="custom">客戶名稱</label>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              id="custom"
+              list="custom-list"
+              autocomplete="off"
+              data-type="customer"
+              required
+            />
+            <datalist id="custom-list">
+              <option value="邁士生技股份有限公司"></option>
+              <option value="唯亦美精品服飾坊"></option>
+              <option value="正義出版社"></option>
+              <option value="錢錢雞蛋糕"></option>
+              <option value="翡翠扶輪社"></option>
+              <option value="樂木集"></option>
+              <option value="shirley"></option>
+              <option value="張凌妤"></option>
+            </datalist>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="date">統編</label>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              autocomplete="off"
+              data-type="customer_number"
+            />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="date">抬頭</label>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              autocomplete="off"
+              data-type="customer_name"
+            />
           </div>
         </div>
-      </nav>
-    <div class="container">
-        <form>
-            <div class="form-row">
-                <button type="button" class="btn btn-info ml-1 mb-3" id="user_btn"> <span style="font-size:12px">當前使用者</span> <span id="user"></span></button>
-            </div>
-            <div class="form-row ">
-                <div class="form-group col-md-2">
-                    <label for="date">訂單日期</label>
-                    <input type="text" class="form-control form-control-sm" id="date" autocomplete="off" data-type="date">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="custom">客戶名稱</label>
-                    <input type="text" class="form-control form-control-sm" id="custom" list="custom-list" autocomplete="off"  data-type="customer" required>
-                    <datalist id="custom-list">
-                        <option value="邁士生技股份有限公司"></option>
-                        <option value="唯亦美精品服飾坊"></option>
-                        <option value="正義出版社"></option>
-                        <option value="錢錢雞蛋糕"></option>
-                        <option value="翡翠扶輪社"></option>
-                        <option value="樂木集"></option>
-                        <option value="shirley"></option>
-                        <option value="張凌妤"></option>
-                    </datalist>
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="date">統編</label>
-                    <input type="text" class="form-control form-control-sm" autocomplete="off"  data-type="customer_number">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for="date">抬頭</label>
-                    <input type="text" class="form-control form-control-sm" autocomplete="off"  data-type="customer_name">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="exampleFormControlTextarea1">訂單內容(用 ; 分隔多項)</label>
-                    <textarea class="form-control form-control-sm" id="Textarea1" rows="6"  data-type="order_content" required></textarea>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group  col-md-4">
-                    <label for="custom">實收價格</label>
-                    <input type="text" class="form-control form-control-sm" autocomplete="off"  data-type="price">
-                </div>
-                <div class="form-group  col-md-4">
-                    <label for="custom">製作成本</label>
-                    <input type="text" class="form-control form-control-sm" autocomplete="off"  data-type="cost" required>
-                </div>
-                <div class="form-group  col-md-4">
-                    <label for="custom">延伸成本</label>
-                    <input type="text" class="form-control form-control-sm" autocomplete="off"  data-type="other_cost">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="exampleFormControlTextarea1">補充備註</label>
-                    <textarea class="form-control form-control-sm" id="Textarea2" rows="3" data-type="remark"></textarea>
-                </div>
-            </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="exampleFormControlTextarea1"
+              >訂單內容(用 ; 分隔多項)</label
+            >
+            <textarea
+              class="form-control form-control-sm"
+              id="Textarea1"
+              rows="6"
+              data-type="order_content"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="custom">實收價格</label>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              autocomplete="off"
+              data-type="price"
+            />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="custom">製作成本</label>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              autocomplete="off"
+              data-type="cost"
+              required
+            />
+          </div>
+          <div class="form-group col-md-4">
+            <label for="custom">延伸成本</label>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              autocomplete="off"
+              data-type="other_cost"
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="exampleFormControlTextarea1">補充備註</label>
+            <textarea
+              class="form-control form-control-sm"
+              id="Textarea2"
+              rows="3"
+              data-type="remark"
+            ></textarea>
+          </div>
+        </div>
 
-            
-            <button type="button" class="btn btn-primary" id="submit">送出訂單</button>
-        </form>
+        <button type="button" class="btn btn-primary" id="submit">
+          送出訂單
+        </button>
+      </form>
     </div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
@@ -116,20 +173,33 @@
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
     <!-- bs -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
     <!-- moment -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js' integrity='sha512-l7jogMOI6ZWZJEY7lREjFdQum46y2+kpp/mnbJx7O+izymO9eGjL6Y4o7cEJNBdouhVHpti2Wd79Q6aIjPwxtQ==' crossorigin='anonymous'></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"
+      integrity="sha512-l7jogMOI6ZWZJEY7lREjFdQum46y2+kpp/mnbJx7O+izymO9eGjL6Y4o7cEJNBdouhVHpti2Wd79Q6aIjPwxtQ=="
+      crossorigin="anonymous"
+    ></script>
     <!-- sweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="content/js/all.js"></script>
-    <script src='content/js/firebase_connect.js'></script>
-    <script src='content/js/input.js'></script>
+    <script src="content/js/firebase_connect.js"></script>
+    <script src="content/js/input.js"></script>
 
-    <script>
-
-
-    </script>
-</body>
+    <script></script>
+  </body>
 </html>

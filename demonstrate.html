@@ -11,7 +11,7 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="content/css/all.css">
+    <link rel="stylesheet" href="content/css/all.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
@@ -30,14 +30,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item ">
+            <!-- <li class="nav-item ">
               <a class="nav-link" href="index.html"
                 >訂單輸入</span></a
               >
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="demonstrate.html">訂單總表</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="menu.html">價目表</a>
             </li>
@@ -46,27 +46,34 @@
       </div>
     </nav>
     <div class="container">
-        <div class="row pl-3 pr-3 mb-3 align-items-center justify-content-between">
-          <button type="button" class="btn btn-info" id="user_btn"> <span style="font-size:12px">當前使用者</span> <span id="user"></span></button>
-          <div class="info">
-            <h5>儲值餘額 <span class="badge badge-success mr-3 balance"></span></h5>
-            <h5>累計獲利 <span class="badge badge-warning profit"></span></h5>
-          </div>
+      <div
+        class="row pl-3 pr-3 mb-3 align-items-center justify-content-between"
+      >
+        <button type="button" class="btn btn-info" id="user_btn">
+          <span style="font-size: 12px">當前使用者</span>
+          <span id="user"></span>
+        </button>
+        <div class="info">
+          <h5>
+            儲值餘額 <span class="badge badge-success mr-3 balance"></span>
+          </h5>
+          <h5>累計獲利 <span class="badge badge-warning profit"></span></h5>
         </div>
-        <table class="table table-bordered table-hover">
-            <thead class="thead-dark">
-              <tr class="">
-                <th class="col-1 text-center" scope="col">訂單日期</th>
-                <th class="col-2 text-center" scope="col">客戶名稱</th>
-                <th class="col-5 text-center" scope="col">品項</th>
-                <th class="col-1 text-center" scope="col">實際收款</th>
-                <th class="col-1 text-center" scope="col">製作成本</th>
-                <th class="col-1 text-center" scope="col">延伸成本</th>
-                <th class="col-1 text-center" scope="col">獲利</th>
-              </tr>
-            </thead>
-            <tbody id="show_orders">
-              <!-- <tr>
+      </div>
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr class="">
+            <th class="col-1 text-center" scope="col">訂單日期</th>
+            <th class="col-2 text-center" scope="col">客戶名稱</th>
+            <th class="col-5 text-center" scope="col">品項</th>
+            <th class="col-1 text-center" scope="col">實際收款</th>
+            <th class="col-1 text-center" scope="col">製作成本</th>
+            <th class="col-1 text-center" scope="col">延伸成本</th>
+            <th class="col-1 text-center" scope="col">獲利</th>
+          </tr>
+        </thead>
+        <tbody id="show_orders">
+          <!-- <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
@@ -75,10 +82,8 @@
                 <td>@mdo</td>
                 <td>@mdo</td>
               </tr> -->
-
-            </tbody>
-          </table>
-
+        </tbody>
+      </table>
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -88,15 +93,31 @@
         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
     <!-- bs -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+      integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+      integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+      crossorigin="anonymous"
+    ></script>
     <!-- moment -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js' integrity='sha512-l7jogMOI6ZWZJEY7lREjFdQum46y2+kpp/mnbJx7O+izymO9eGjL6Y4o7cEJNBdouhVHpti2Wd79Q6aIjPwxtQ==' crossorigin='anonymous'></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"
+      integrity="sha512-l7jogMOI6ZWZJEY7lREjFdQum46y2+kpp/mnbJx7O+izymO9eGjL6Y4o7cEJNBdouhVHpti2Wd79Q6aIjPwxtQ=="
+      crossorigin="anonymous"
+    ></script>
     <!-- sweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="content/js/all.js"></script>
-    <script src='content/js/firebase_connect.js'></script>
-    <script src='content/js/demonstrate.js'></script>
+    <script src="content/js/firebase_connect.js"></script>
+    <script src="content/js/demonstrate.js"></script>
   </body>
 </html>
