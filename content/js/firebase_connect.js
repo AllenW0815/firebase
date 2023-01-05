@@ -31,6 +31,9 @@ balance2 += 50000;
 // 1110701
 balance += 50000;
 balance2 += 50000;
+// 1111108 賣 10000 給 TACO
+balance -= 10000;
+balance2 += 10000;
 
 // 創建寫入時的一個物件
 let datas = getElements("[data-type]");
